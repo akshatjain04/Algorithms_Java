@@ -1,0 +1,6 @@
+userId,statusCode,scenario
+"fugiat in",200,"User details"
+"invalid_user_1",404,"User details"
+"invalid_user_2",500,"User details"
+"invalid_user_3",503,"User details"
+"invalid_user_4",400,"User details"
