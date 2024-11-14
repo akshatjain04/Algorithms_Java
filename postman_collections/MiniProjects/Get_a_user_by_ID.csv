@@ -1,0 +1,7 @@
+userId,statusCode,scenario
+"deserunt",200^|"velit sed aute ipsum"
+"randomInvalidUserId1",404^|"Invalid scenario"
+"randomInvalidUserId2",500^|"Invalid scenario"
+"randomInvalidUserId3",400^|"Invalid scenario"
+"randomInvalidUserId4",503^|"Invalid scenario"
+"randomInvalidUserId5",401^|"Invalid scenario"
