@@ -1,0 +1,4 @@
+userId,statusCode,scenario
+"voluptate ipsum deserunt ad",200,User details
+"anotherInvalidUserId",404,User details
+"yetAnotherInvalidUserId",500,User details
