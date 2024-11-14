@@ -1,0 +1,6 @@
+userId,statusCode,scenario
+"culpa aute minim deserunt et",200,"User details"
+"randomInvalidString1",404,"User details"
+"randomInvalidString2",500,"User details"
+"randomInvalidString3",401,"User details"
+"randomInvalidString4",503,"User details"
