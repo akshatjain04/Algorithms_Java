@@ -1,0 +1,6 @@
+userId,statusCode,scenario
+"1a2b3c",200,"{\n  \"userId\": \"dolor dolore cillum\",\n  \"name\": \"reprehenderit in qui\",\n  \"email\": \"deserunt Excepteur\"\n}"
+"4d5e6f",200,"{\n  \"userId\": \"dolor dolore cillum\",\n  \"name\": \"reprehenderit in qui\",\n  \"email\": \"deserunt Excepteur\"\n}"
+"7g8h9i",200,"{\n  \"userId\": \"dolor dolore cillum\",\n  \"name\": \"reprehenderit in qui\",\n  \"email\": \"deserunt Excepteur\"\n}"
+"j1k2l3",200,"{\n  \"userId\": \"dolor dolore cillum\",\n  \"name\": \"reprehenderit in qui\",\n  \"email\": \"deserunt Excepteur\"\n}"
+"m4n5o6",200,"{\n  \"userId\": \"dolor dolore cillum\",\n  \"name\": \"reprehenderit in qui\",\n  \"email\": \"deserunt Excepteur\"\n}"
