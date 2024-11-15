@@ -1,0 +1,5 @@
+userId,statusCode,scenario
+"ut aliqua tempor lab",200,"User details"
+"randomInvalidUserId1",404,"User details"
+"randomInvalidUserId2",500,"User details"
+"randomInvalidUserId3",401,"User details"
