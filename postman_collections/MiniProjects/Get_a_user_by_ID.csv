@@ -1,0 +1,5 @@
+userId,statusCode,scenario
+"pariatur",200,"{\n  \"userId\": \"pariatur\",\n  \"name\": \"ex culpa dolor anim\",\n  \"email\": \"exercitation officia quis\"\n}"
+"randomString1",404,"{\n  \"userId\": \"randomString1\",\n  \"name\": \"invalidName1\",\n  \"email\": \"invalidEmail1\"\n}"
+"randomString2",500,"{\n  \"userId\": \"randomString2\",\n  \"name\": \"invalidName2\",\n  \"email\": \"invalidEmail2\"\n}"
+"randomString3",503,"{\n  \"userId\": \"randomString3\",\n  \"name\": \"invalidName3\",\n  \"email\": \"invalidEmail3\"\n}"
