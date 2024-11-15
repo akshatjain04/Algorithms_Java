@@ -1,0 +1,6 @@
+userId,statusCode,scenario
+"quis sit consectetur commodo",200,"User details"
+"random_invalid_userId_1",404,"User details"
+"random_invalid_userId_2",500,"User details"
+"random_invalid_userId_3",503,"User details"
+"random_invalid_userId_4",401,"User details"
