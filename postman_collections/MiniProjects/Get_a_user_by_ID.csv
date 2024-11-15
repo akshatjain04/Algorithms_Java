@@ -1,0 +1,7 @@
+userId,statusCode,scenario
+"irure sit",200^|"User details"
+"random_id_1",404^|"Invalid userId"
+"random_id_2",503^|"Invalid userId"
+"random_id_3",401^|"Invalid userId"
+"random_id_4",200^|"User details"
+"random_id_5",200^|"User details"
