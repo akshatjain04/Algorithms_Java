@@ -1,0 +1,6 @@
+userId,statusCode,scenario
+"ab12cd34ef56gh78ij90kl",200,"User details"
+"mn12op34qr56st78uv90wx",200,"User details"
+"yz12ab34cd56ef78gh90ij",200,"User details"
+"kl12mn34op56qr78st90uv",200,"User details"
+"wx12yz34ab56cd78ef90gh",200,"User details"
