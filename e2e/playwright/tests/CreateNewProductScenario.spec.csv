@@ -1,0 +1,2 @@
+METHOD^|^URL^|^REQ_HEADERS^|^REQ_BODY^|^RESPONSE_CODE^|^RESPONSE_BODY
+POST^|^http://localhost:8080/api/products^|^^|^{ "name": "Test Product", "description": "This is a test product.", "price": 10 }^|^200^|^{ "id": 1, "name": "Test Product", "description": "This is a test product.", "price": 10 }
