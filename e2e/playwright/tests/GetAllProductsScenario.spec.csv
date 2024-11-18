@@ -1,0 +1,2 @@
+METHOD^|^URL^|^REQ_HEADERS^|^REQ_BODY^|^RESPONSE_CODE^|^RESPONSE_BODY
+GET^|^http://localhost:8080/api/products^|^^|^200^|^[{"id":0,"name":"","description":"","price":0}]
