@@ -1,0 +1,2 @@
+METHOD^|^URL^|^REQ_HEADERS^|^REQ_BODY^|^RESPONSE_CODE^|^RESPONSE_BODY
+DELETE^|^http://localhost:8080/api/products/1^|^^|^^|^200^|^{}
