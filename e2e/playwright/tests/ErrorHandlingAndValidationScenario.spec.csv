@@ -1,0 +1,7 @@
+METHOD^|^URL^|^REQ_HEADERS^|^REQ_BODY^|^RESPONSE_CODE^|^RESPONSE_BODY
+POST^|^https://petstore.swagger.io/v2/pet^|^Content-Type: application/json^|^{ "id": "", "name": "", "photoUrls": [], "tags": [], "status": "" }^|^405^|^{ "code": 405, "type": "unknown", "message": "Invalid input" }
+GET^|^https://petstore.swagger.io/v2/pet/invalidID^|^api_key: YOUR_API_KEY^|^{}^|^404^|^{ "code": 404, "type": "unknown", "message": "Pet not found" }
+GET^|^https://petstore.swagger.io/v2/store/order/0^|^Content-Type: application/json^|^{}^|^400^|^{ "code": 400, "type": "unknown", "message": "Invalid ID supplied" }
+GET^|^https://petstore.swagger.io/v2/store/order/11^|^Content-Type: application/json^|^{}^|^400^|^{ "code": 400, "type": "unknown", "message": "Invalid ID supplied" }
+POST^|^https://petstore.swagger.io/v2/user^|^Content-Type: application/json^|^{ "id": "", "username": "", "firstName": "", "lastName": "", "email": "", "password": "", "phone": "", "userStatus": "" }^|^0^|^{ "code": 0, "type": "unknown", "message": "Error response" }
+GET^|^https://petstore.swagger.io/v2/user/login?username=invalidUser&password=invalidPassword^|^Content-Type: application/json^|^{}^|^400^|^{ "code": 400, "type": "unknown", "message": "Invalid credentials" }
