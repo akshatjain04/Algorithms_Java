@@ -1,0 +1,15 @@
+METHOD^|^URL^|^REQ_HEADERS^|^REQ_BODY^|^RESPONSE_CODE^|^RESPONSE_BODY
+post^|^https://petstore.swagger.io/v2/user^|^^|^{ "username": "testuser1", "email": "test/email.com", "firstName": "Test", "lastName": "User", "password": "pass123", "phone": "1234567890" }^|^^|^
+get^|^https://petstore.swagger.io/v2/user/login?username=testuser1&password=pass123^|^^|^{}^|^200^|^{ "id": 0, "username": "testuser1", "firstName": "Test", "lastName": "User", "email": "test/email.com", "password": "pass123", "phone": "1234567890", "userStatus": 0 }
+post^|^https://petstore.swagger.io/v2/pet^|^{ "Authorization": "Bearer ACCESS_TOKEN" }^|^{ "name": "Fluffy", "category": { "id": 0, "name": "Cat" }, "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "" } ], "status": "available" }^|^200^|^{ "id": 0, "name": "Fluffy", "category": { "id": 0, "name": "Cat" }, "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "" } ], "status": "available" }
+get^|^https://petstore.swagger.io/v2/pet/0^|^{ "api_key": "API_KEY" }^|^{}^|^200^|^{ "id": 0, "category": { "id": 0, "name": "Cat" }, "name": "Fluffy", "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "" } ], "status": "available" }
+post^|^https://petstore.swagger.io/v2/pet/0/uploadImage^|^{ "Authorization": "Bearer ACCESS_TOKEN" }^|^{}^|^200^|^{ "code": 200, "type": "unknown", "message": "additionalMetadata: none, file: (binary)" }
+put^|^https://petstore.swagger.io/v2/pet^|^{ "Authorization": "Bearer ACCESS_TOKEN" }^|^{ "id": 0, "name": "Fluffy", "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "" } ], "status": "pending" }^|^200^|^{ "id": 0, "category": { "id": 0, "name": "Cat" }, "name": "Fluffy", "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "" } ], "status": "pending" }
+get^|^https://petstore.swagger.io/v2/pet/findByStatus?status=pending^|^{ "Authorization": "Bearer ACCESS_TOKEN" }^|^{}^|^200^|^[ { "id": 0, "category": { "id": 0, "name": "Cat" }, "name": "Fluffy", "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "" } ], "status": "pending" } ]
+get^|^https://petstore.swagger.io/v2/pet/findByTags?tags=friendly^|^{ "Authorization": "Bearer ACCESS_TOKEN" }^|^{}^|^200^|^[ { "id": 0, "category": { "id": 0, "name": "Cat" }, "name": "Fluffy", "photoUrls": [ "" ], "tags": [ { "id": 0, "name": "friendly" } ], "status": "available" } ]
+get^|^https://petstore.swagger.io/v2/store/inventory^|^{ "api_key": "API_KEY" }^|^{}^|^200^|^{ "available": 10, "pending": 5, "sold": 2 }
+post^|^https://petstore.swagger.io/v2/store/order^|^^|^{ "petId": 0, "quantity": 1, "shipDate": "2023-04-12T23:20:50.52Z", "status": "placed", "complete": false }^|^200^|^{ "id": 0, "petId": 0, "quantity": 1, "shipDate": "2023-04-12T23:20:50.52Z", "status": "placed", "complete": true }
+get^|^https://petstore.swagger.io/v2/store/order/0^|^^|^{}^|^200^|^{ "id": 0, "petId": 0, "quantity": 1, "shipDate": "2023-04-12T23:20:50.52Z", "status": "approved", "complete": true }
+delete^|^https://petstore.swagger.io/v2/store/order/0^|^^|^{}^|^200^|^
+delete^|^https://petstore.swagger.io/v2/pet/0^|^{ "api_key": "API_KEY" }^|^{}^|^200^|^
+delete^|^https://petstore.swagger.io/v2/user/testuser1^|^^|^{}^|^200^|^
