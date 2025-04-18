@@ -58,59 +58,62 @@ Validation:
 // ********RoostGPT********
 
 package com.thealgorithms.audiofilters;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
+import org.assertj.core.api.Assertions;
 import org.junit.experimental.categories.Category;
 
 public class IirFilterProcessTest {
-    
-    private IIRFilter iirFilter;
-    private double[] sample = {.1,.2,.3,.4,.5};
-    private double[] aCoeffs = {1.1,1.2,1.3,1.4,1.5};
-    private double[] bCoeffs = {2.1,2.2,2.3,2.4,2.5};
-    @BeforeEach
-    public void setup(){
-        // Initialize IIRFilter with order 5
-        iirFilter = new IIRFilter(5);
+    @Test
+    @Tag("valid")
+    public void checkProcessingWithValidSampleValues() {
+        IIRFilter iirFilter = new IIRFilter(3);
+        double[] aCoeffs = {1.0, 0.3, -0.2, 0.1};
+        double[] bCoeffs = {1.0, -0.3, 0.2, -0.1};
         iirFilter.setCoeffs(aCoeffs, bCoeffs);
+      
+        double sampleValue = 5.4;
+        double expectedValue = 1.08;
+        double actualValue = iirFilter.process(sampleValue);
+        Assertions.assertThat(actualValue).isEqualTo(expectedValue);
     }
-    @Tag("valid")
+    
     @Test
-    public void checkProcessingWithValidSampleValues(){
-        double processResult;
-        for (double s : sample){
-            processResult = iirFilter.process(s);
-            Assertions.assertThat(processResult).isBetween(-Double.MAX_VALUE, Double.MAX_VALUE);
-        }
-    }
     @Tag("invalid")
-    @Test
-    public void checkCoefficientsDimensions(){
-        aCoeffs = new double[]{1.0, 2.0};
-        Assertions.assertThatThrownBy( () -> {
+    public void checkCoefficientsDimensions() {
+        IIRFilter iirFilter = new IIRFilter(3);
+        double[] aCoeffs = {1.0, 0.3, -0.2};
+        double[] bCoeffs = {1.0, -0.3, 0.2, -0.1};
+        Assertions.assertThatThrownBy(() -> {
             iirFilter.setCoeffs(aCoeffs, bCoeffs);
-        }).isInstanceOf(IllegalArgumentException.class);
+        }).isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("Coeffs must be of size" + aCoeffs.length);
     }
+    @Test
     @Tag("valid")
-    @Test
-    public void validateHistoryEffectOnProcess(){
-        double processResult1, processResult2;
-        for (double s : sample){
-            processResult1 = iirFilter.process(s);
-            iirFilter.historyX[2] = .6;
-            iirFilter.historyY[2] = .6;
-            processResult2 = iirFilter.process(s);
-            Assertions.assertThat(processResult1).isNotEqualTo(processResult2);
-        }
+    public void validateHistoryEffectOnProcess() {
+        IIRFilter iirFilter = new IIRFilter(4);
+        double[] aCoeffs = {1.0, 0.3, 0.2, -0.2, 0.1};
+        double[] bCoeffs = {1.0, -0.3, -0.2, 0.2, -0.1};
+        iirFilter.setCoeffs(aCoeffs, bCoeffs);
+        
+        iirFilter.process(3.1);
+        iirFilter.process(2.6);
+        double firstProcessResult = iirFilter.process(4.9);
+        iirFilter.process(1.4);
+        double secondProcessResult = iirFilter.process(4.9);
+        
+        Assertions.assertThat(firstProcessResult).isNotEqualTo(secondProcessResult);
     }
-    @Tag("invalid")
     @Test
-    public void checkZeroCoefficientsInACoeffsArray(){
-        aCoeffs[0] = 0;
-        Assertions.assertThatThrownBy( () -> {
+    @Tag("invalid")
+    public void checkZeroCoefficientsInACoeffsArray() {
+        IIRFilter iirFilter = new IIRFilter(3);
+        double[] aCoeffs = {0.0, 0.3, -0.2, 0.1};
+        double[] bCoeffs = {1.0, -0.3, 0.2, -0.1};
+        Assertions.assertThatThrownBy(() -> {
             iirFilter.setCoeffs(aCoeffs, bCoeffs);
-        }).isInstanceOf(IllegalArgumentException.class);
+        }).isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("aCoeffs.get(0) must not be zero");
     }
 }
