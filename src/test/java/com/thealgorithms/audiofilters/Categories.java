@@ -26,4 +26,8 @@ public interface Categories {
 
 	}
 
+	interface process {
+
+	}
+
 }
